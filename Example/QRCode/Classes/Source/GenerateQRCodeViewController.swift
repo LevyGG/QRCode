@@ -8,45 +8,24 @@
 
 import UIKit
 
-class GenerateQRCodeViewController: UIViewController
-{
-    
-    //MARK: -
-    //MARK: Global Variables
+class GenerateQRCodeViewController: UIViewController{
+
     
     @IBOutlet private weak var contentLab: UITextField!
     @IBOutlet private weak var logoImageView: UIImageView!
     @IBOutlet private weak var QRCodeImageView: UIImageView!
     
-    //MARK: -
-    //MARK: Lazy Components
     
-    
-    //MARK: -
-    //MARK: Public Methods
-    
-    
-    //MARK: -
-    //MARK: Data Initialize
-    
-    
-    //MARK: -
-    //MARK: Life Cycle
-    
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         setupComponents()
         
     }
     
+
     
-    //MARK: -
-    //MARK: Interface Components
-    
-    private func setupComponents()
-    {
+    private func setupComponents(){
         
         let generateItem = UIBarButtonItem(title: "生成", style: .plain, target: self, action: #selector(generateItemClick))
         navigationItem.rightBarButtonItem = generateItem
@@ -56,16 +35,12 @@ class GenerateQRCodeViewController: UIViewController
         
     }
     
-    //MARK: -
-    //MARK: Target Action
-    
-    @objc private func generateItemClick()
-    {
+
+    @objc private func generateItemClick() {
         
         view.endEditing(true)
         
-        guard let  content = contentLab.text else
-        {
+        guard let  content = contentLab.text else {
             
             Tool.confirm(title: "温馨提示", message: "请输入内容", controller: self)
             
@@ -94,8 +69,7 @@ class GenerateQRCodeViewController: UIViewController
     
     }
     
-    @objc private func chooseLogo()
-    {
+    @objc private func chooseLogo(){
         
         Tool.shareTool.choosePicture(self, editor: true) { [weak self] (image) in
             self?.logoImageView.image = image
@@ -103,30 +77,16 @@ class GenerateQRCodeViewController: UIViewController
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         
         view.endEditing(true)
         
     }
-    
-    //MARK: -
-    //MARK: Data Request
-    
-    
-    //MARK: -
-    //MARK: Private Methods
-    
-    
-    //MARK: -
-    //MARK: Dealloc
-    
+  
     
 }
 
 
-//MARK: -
-//MARK: <#statement#> Delegate
 
 
 

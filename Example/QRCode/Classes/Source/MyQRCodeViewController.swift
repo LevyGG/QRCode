@@ -64,8 +64,5 @@ class MyQRCodeViewController: UIViewController
 }
 
 
-//MARK: -
-//MARK: <#statement#> Delegate
-
 
 

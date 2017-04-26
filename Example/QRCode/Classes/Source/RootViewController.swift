@@ -8,40 +8,21 @@
 
 import UIKit
 
-class RootViewController: UIViewController
-{
-    
-    //MARK: -
-    //MARK: Global Variables
+class RootViewController: UIViewController{
+
     private let segueID = "RecognizeQRCodeViewController"
     private var sourceImage : UIImage?
     
-    //MARK: -
-    //MARK: Lazy Components
+
     
-    
-    //MARK: -
-    //MARK: Public Methods
-    
-    
-    //MARK: -
-    //MARK: Data Initialize
-    
-    
-    //MARK: -
-    //MARK: Life Cycle
-    
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         
         super.viewDidLoad()
-        
         
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         
         guard segue.identifier == segueID else { return }
         guard let destinationViewController =  segue.destination as? RecognizeQRCodeViewController else { return }
@@ -49,16 +30,9 @@ class RootViewController: UIViewController
         
     }
     
+
     
-    //MARK: -
-    //MARK: Interface Components
-    
-    
-    //MARK: -
-    //MARK: Target Action
-    
-    @IBAction private  func recognizeQRCodeClick()
-    {
+    @IBAction private  func recognizeQRCodeClick(){
         
         Tool.shareTool.choosePicture(self, editor: true) { [weak self] (image) in
             self!.sourceImage = image
@@ -66,17 +40,7 @@ class RootViewController: UIViewController
         }
         
     }
-    
-    //MARK: -
-    //MARK: Data Request
-    
-    
-    //MARK: -
-    //MARK: Private Methods
-    
-    
-    //MARK: -
-    //MARK: Dealloc
+
     
     
 }

@@ -11,11 +11,7 @@ import AVFoundation
 
 private let scanAnimationDuration = 3.0//扫描时长
 
-class ScanCodeViewController: UIViewController
-{
-    
-    //MARK: -
-    //MARK: Global Variables
+class ScanCodeViewController: UIViewController{
     
     @IBOutlet weak var scanPane: UIImageView!///扫描框
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -38,21 +34,11 @@ class ScanCodeViewController: UIViewController
     }()
     
     var scanSession :  AVCaptureSession?
-    
-    
-    //MARK: -
-    //MARK: Public Methods
-    
-    
-    //MARK: -
-    //MARK: Data Initialize
-    
-    
+
     //MARK: -
     //MARK: Life Cycle
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         
         super.viewDidLoad()
         
@@ -63,8 +49,7 @@ class ScanCodeViewController: UIViewController
         
     }
     
-    override func viewWillAppear(_ animated: Bool)
-    {
+    override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
         startScan()
@@ -75,11 +60,9 @@ class ScanCodeViewController: UIViewController
     //MARK: -
     //MARK: Interface Components
     
-    func setupScanSession()
-    {
+    func setupScanSession(){
         
-        do
-        {
+        do{
             //设置捕捉设备
             let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
             //设置设备输入输出
@@ -92,13 +75,11 @@ class ScanCodeViewController: UIViewController
             let  scanSession = AVCaptureSession()
             scanSession.canSetSessionPreset(AVCaptureSessionPresetHigh)
             
-            if scanSession.canAddInput(input)
-            {
+            if scanSession.canAddInput(input){
                 scanSession.addInput(input)
             }
             
-            if scanSession.canAddOutput(output)
-            {
+            if scanSession.canAddOutput(output){
                 scanSession.addOutput(output)
             }
             
@@ -124,16 +105,11 @@ class ScanCodeViewController: UIViewController
                 output.rectOfInterest = (scanPreviewLayer?.metadataOutputRectOfInterest(for: self.scanPane.frame))!
             })
             
-            
-            
             //保存会话
             self.scanSession = scanSession
             
-        }
-        catch
-        {
+        }catch{
             //摄像头不可用
-            
             Tool.confirm(title: "温馨提示", message: "摄像头不可用", controller: self)
             
             return
@@ -145,9 +121,7 @@ class ScanCodeViewController: UIViewController
     //MARK: Target Action
     
     //闪光灯
-    @IBAction func light(_ sender: UIButton)
-    {
-        
+    @IBAction func light(_ sender: UIButton)    {
         lightOn = !lightOn
         sender.isSelected = lightOn
         turnTorchOn()
