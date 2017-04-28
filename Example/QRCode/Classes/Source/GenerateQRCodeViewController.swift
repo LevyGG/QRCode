@@ -51,10 +51,10 @@ class GenerateQRCodeViewController: UIViewController{
         {
             DispatchQueue.global().async {
                 
-                let image = content.generateQRCodeWithLogo(logo: self.logoImageView.image)
-                DispatchQueue.main.async(execute: {
-                    self.QRCodeImageView.image = image
-                })
+//                let image = content.generateQRCodeWithLogo(logo: self.logoImageView.image)
+//                DispatchQueue.main.async(execute: {
+//                    self.QRCodeImageView.image = image
+//                })
                 
             }
             

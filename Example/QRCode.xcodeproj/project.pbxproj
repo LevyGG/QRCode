@@ -20,28 +20,24 @@
 		CE7432351D82BE6300CBE4B0 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7432301D82BE6300CBE4B0 /* ScanCodeViewController.swift */; };
 		CE7432371D82BEBE00CBE4B0 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7432361D82BEBE00CBE4B0 /* Tool.swift */; };
 		CE7432391D82CBCA00CBE4B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE7432381D82CBCA00CBE4B0 /* Main.storyboard */; };
-		CEAE2C5B1D91271A0071AD9C /* String+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE2C591D91271A0071AD9C /* String+QRCode.swift */; };
-		CEAE2C5C1D91271A0071AD9C /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE2C5A1D91271A0071AD9C /* UIImage+QRCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE5B43CF1D8FEDEF0045339D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		CE7431DE1D82A3F700CBE4B0 /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE7431FB1D82A5FD00CBE4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE7431FB1D82A5FD00CBE4B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate/AppDelegate.swift; sourceTree = "<group>"; };
 		CE7431FD1D82A5FD00CBE4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7431FF1D82A5FD00CBE4B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7432021D82A5FD00CBE4B0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE7432051D82A5FD00CBE4B0 /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = noticeMusic.caf; sourceTree = "<group>"; };
-		CE7432061D82A5FD00CBE4B0 /* Picture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Picture.xcassets; sourceTree = "<group>"; };
+		CE7432051D82A5FD00CBE4B0 /* noticeMusic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = noticeMusic.caf; path = ../../Resource/noticeMusic.caf; sourceTree = "<group>"; };
+		CE7432061D82A5FD00CBE4B0 /* Picture.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Picture.xcassets; path = ../../Resource/Picture.xcassets; sourceTree = "<group>"; };
 		CE74322C1D82BE6300CBE4B0 /* GenerateQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateQRCodeViewController.swift; sourceTree = "<group>"; };
 		CE74322D1D82BE6300CBE4B0 /* MyQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQRCodeViewController.swift; sourceTree = "<group>"; };
 		CE74322E1D82BE6300CBE4B0 /* RecognizeQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognizeQRCodeViewController.swift; sourceTree = "<group>"; };
 		CE74322F1D82BE6300CBE4B0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CE7432301D82BE6300CBE4B0 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		CE7432361D82BEBE00CBE4B0 /* Tool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
-		CE7432381D82CBCA00CBE4B0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		CEAE2C591D91271A0071AD9C /* String+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QRCode.swift"; sourceTree = "<group>"; };
-		CEAE2C5A1D91271A0071AD9C /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
+		CE7432381D82CBCA00CBE4B0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../AppDelegate/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,56 +71,24 @@
 			isa = PBXGroup;
 			children = (
 				CE74321E1D82BE4900CBE4B0 /* Classes */,
-				CE7431F91D82A5FD00CBE4B0 /* AppEntrance */,
-				CE7432031D82A5FD00CBE4B0 /* Extension */,
-				CE7432041D82A5FD00CBE4B0 /* Resource */,
+				CE7431FC1D82A5FD00CBE4B0 /* SupportingFile */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
 		};
-		CE7431F91D82A5FD00CBE4B0 /* AppEntrance */ = {
-			isa = PBXGroup;
-			children = (
-				CE7431FA1D82A5FD00CBE4B0 /* AppDelegate */,
-				CE7431FC1D82A5FD00CBE4B0 /* AppSource */,
-			);
-			path = AppEntrance;
-			sourceTree = "<group>";
-		};
-		CE7431FA1D82A5FD00CBE4B0 /* AppDelegate */ = {
+		CE7431FC1D82A5FD00CBE4B0 /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
 				CE7432381D82CBCA00CBE4B0 /* Main.storyboard */,
 				CE7431FB1D82A5FD00CBE4B0 /* AppDelegate.swift */,
-			);
-			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		CE7431FC1D82A5FD00CBE4B0 /* AppSource */ = {
-			isa = PBXGroup;
-			children = (
 				CE7431FD1D82A5FD00CBE4B0 /* Assets.xcassets */,
 				CE7431FE1D82A5FD00CBE4B0 /* LaunchScreen.storyboard */,
 				CE7432021D82A5FD00CBE4B0 /* Info.plist */,
-			);
-			path = AppSource;
-			sourceTree = "<group>";
-		};
-		CE7432031D82A5FD00CBE4B0 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE2C581D91271A0071AD9C /* QRCode */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		CE7432041D82A5FD00CBE4B0 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
 				CE7432051D82A5FD00CBE4B0 /* noticeMusic.caf */,
 				CE7432061D82A5FD00CBE4B0 /* Picture.xcassets */,
 			);
-			path = Resource;
+			name = SupportingFile;
+			path = AppEntrance/AppSource;
 			sourceTree = "<group>";
 		};
 		CE74321E1D82BE4900CBE4B0 /* Classes */ = {
@@ -154,16 +118,6 @@
 				CE7432361D82BEBE00CBE4B0 /* Tool.swift */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		CEAE2C581D91271A0071AD9C /* QRCode */ = {
-			isa = PBXGroup;
-			children = (
-				CEAE2C591D91271A0071AD9C /* String+QRCode.swift */,
-				CEAE2C5A1D91271A0071AD9C /* UIImage+QRCode.swift */,
-			);
-			name = QRCode;
-			path = ../../../QRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,13 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7432341D82BE6300CBE4B0 /* RootViewController.swift in Sources */,
-				CEAE2C5C1D91271A0071AD9C /* UIImage+QRCode.swift in Sources */,
 				CE74320C1D82A5FD00CBE4B0 /* AppDelegate.swift in Sources */,
 				CE7432331D82BE6300CBE4B0 /* RecognizeQRCodeViewController.swift in Sources */,
 				CE7432371D82BEBE00CBE4B0 /* Tool.swift in Sources */,
 				CE7432311D82BE6300CBE4B0 /* GenerateQRCodeViewController.swift in Sources */,
 				CE7432351D82BE6300CBE4B0 /* ScanCodeViewController.swift in Sources */,
-				CEAE2C5B1D91271A0071AD9C /* String+QRCode.swift in Sources */,
 				CE7432321D82BE6300CBE4B0 /* MyQRCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

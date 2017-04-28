@@ -302,7 +302,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aiR-oq-nRu">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCode_2" translatesAutoresizingMaskIntoConstraints="NO" id="aiR-oq-nRu">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -346,7 +346,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yP8-hb-hff">
                                 <rect key="frame" x="30" y="134" width="315" height="353"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u3u-Tf-rHO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QRCode_2" translatesAutoresizingMaskIntoConstraints="NO" id="u3u-Tf-rHO">
                                         <rect key="frame" x="16" y="20" width="283.5" height="283.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="u3u-Tf-rHO" secondAttribute="height" multiplier="1:1" id="hym-Jq-MBX"/>
@@ -395,6 +395,7 @@
     </scenes>
     <resources>
         <image name="8_150709170804_8" width="200" height="200"/>
+        <image name="QRCode_2" width="280" height="280"/>
         <image name="QRCode_ScanBox" width="180" height="180"/>
         <image name="qrcode_scan_btn_flash_down.png" width="65" height="87"/>
         <image name="qrcode_scan_btn_flash_nor" width="65" height="87"/>

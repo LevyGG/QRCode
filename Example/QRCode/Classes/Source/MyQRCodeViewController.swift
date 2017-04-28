@@ -31,12 +31,11 @@ class MyQRCodeViewController: UIViewController
     //MARK: -
     //MARK: Life Cycle
     
-    override func viewDidLoad()
-    {
-        
+    override func viewDidLoad(){
         super.viewDidLoad()
         
-        myQRCode.image = "https://github.com/fuaiyi/QRCode.git".generateQRCodeWithLogo(logo: UIImage(named: "8_150709170804_8"))
+        
+        myQRCode.image = UIImage(named: "QRCode_2")
         
     }
     

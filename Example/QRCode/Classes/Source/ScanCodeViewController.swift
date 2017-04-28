@@ -15,45 +15,33 @@ class ScanCodeViewController: UIViewController{
     
     @IBOutlet weak var scanPane: UIImageView!///扫描框
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
-    
     var lightOn = false///开光灯
-    
-    
-    //MARK: -
-    //MARK: Lazy Components
-    
-    lazy var scanLine : UIImageView =
-        {
-            
-            let scanLine = UIImageView()
-            scanLine.frame = CGRect(x: 0, y: 0, width: self.scanPane.bounds.width, height: 3)
-            scanLine.image = UIImage(named: "QRCode_ScanLine")
-            
-            return scanLine
-            
-    }()
     
     var scanSession :  AVCaptureSession?
 
+    lazy var scanLine : UIImageView = {
+            let scanLine = UIImageView()
+            scanLine.frame = CGRect(x: 0, y: 0, width: self.scanPane.bounds.width, height: 3)
+            scanLine.image = UIImage(named: "QRCode_ScanLine")
+            return scanLine
+    }()
+    
+    
     //MARK: -
     //MARK: Life Cycle
     
     override func viewDidLoad(){
-        
         super.viewDidLoad()
         
         view.layoutIfNeeded()
         scanPane.addSubview(scanLine)
-        
         setupScanSession()
         
     }
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        
         startScan()
-        
     }
     
     
@@ -121,7 +109,7 @@ class ScanCodeViewController: UIViewController{
     //MARK: Target Action
     
     //闪光灯
-    @IBAction func light(_ sender: UIButton)    {
+    @IBAction func light(_ sender: UIButton) {
         lightOn = !lightOn
         sender.isSelected = lightOn
         turnTorchOn()
@@ -129,8 +117,7 @@ class ScanCodeViewController: UIViewController{
     }
     
     //相册
-    @IBAction func photo()
-    {
+    @IBAction func photo() {
         
         Tool.shareTool.choosePicture(self, editor: true, options: .photoLibrary) {[weak self] (image) in
 
@@ -156,15 +143,13 @@ class ScanCodeViewController: UIViewController{
     //MARK: Private Methods
     
     //开始扫描
-    fileprivate func startScan()
-    {
+    fileprivate func startScan() {
     
         scanLine.layer.add(scanAnimation(), forKey: "scan")
         
         guard let scanSession = scanSession else { return }
         
-        if !scanSession.isRunning
-        {
+        if !scanSession.isRunning {
             scanSession.startRunning()
         }
         
@@ -172,8 +157,7 @@ class ScanCodeViewController: UIViewController{
     }
     
     //扫描动画
-    private func scanAnimation() -> CABasicAnimation
-    {
+    private func scanAnimation() -> CABasicAnimation {
     
         let startPoint = CGPoint(x: scanLine .center.x  , y: 1)
         let endPoint = CGPoint(x: scanLine.center.x, y: scanPane.bounds.size.height - 2)
@@ -191,14 +175,11 @@ class ScanCodeViewController: UIViewController{
     
     
     ///闪光灯
-    private func turnTorchOn()
-    {
+    private func turnTorchOn() {
         
-        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else
-        {
+        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else {
             
-            if lightOn
-            {
+            if lightOn {
                 
                 Tool.confirm(title: "温馨提示", message: "闪光灯不可用", controller: self)
 
@@ -207,19 +188,15 @@ class ScanCodeViewController: UIViewController{
             return
         }
         
-        if device.hasTorch
-        {
-            do
-            {
+        if device.hasTorch {
+            do {
                 try device.lockForConfiguration()
                 
-                if lightOn && device.torchMode == .off
-                {
+                if lightOn && device.torchMode == .off {
                     device.torchMode = .on
                 }
                 
-                if !lightOn && device.torchMode == .on
-                {
+                if !lightOn && device.torchMode == .on {
                     device.torchMode = .off
                 }
                 
@@ -234,8 +211,7 @@ class ScanCodeViewController: UIViewController{
     //MARK: -
     //MARK: Dealloc
     
-    deinit
-    {
+    deinit {
         ///移除通知
         NotificationCenter.default.removeObserver(self)
         
@@ -248,11 +224,9 @@ class ScanCodeViewController: UIViewController{
 //MARK: AVCaptureMetadataOutputObjects Delegate
 
 //扫描捕捉完成
-extension ScanCodeViewController : AVCaptureMetadataOutputObjectsDelegate
-{
+extension ScanCodeViewController : AVCaptureMetadataOutputObjectsDelegate{
     
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!)
-    {
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         
         //停止扫描
         self.scanLine.layer.removeAllAnimations()
@@ -262,11 +236,9 @@ extension ScanCodeViewController : AVCaptureMetadataOutputObjectsDelegate
         Tool.playAlertSound(sound: "noticeMusic.caf")
         
         //扫完完成
-        if metadataObjects.count > 0
-        {
+        if metadataObjects.count > 0 {
             
-            if let resultObj = metadataObjects.first as? AVMetadataMachineReadableCodeObject
-            {
+            if let resultObj = metadataObjects.first as? AVMetadataMachineReadableCodeObject {
                 
                 Tool.confirm(title: "扫描结果", message: resultObj.stringValue, controller: self,handler: { (_) in
                     //继续扫描
